@@ -4,9 +4,13 @@ import pandas as pd
 import plotly.express as px
 import plotly.io as pio
 from flask import Flask, render_template
+from flask_cors import CORS
+
 
 # Flask 앱을 생성합니다.
 app = Flask(__name__)
+CORS(app)
+
 
 # 주식 데이터를 가져오는 함수를 정의합니다.
 def get_stock_data(ticker, start_date, end_date):
