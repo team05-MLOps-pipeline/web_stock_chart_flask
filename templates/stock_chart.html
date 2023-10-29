@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ticker}} Stock Chart</title>  <!-- 웹 페이지 제목에 종목 이름을 추가합니다. -->
+</head>
+<body>
+    <h1>{{ticker}} Stock Chart</h1>  <!-- 제목에 종목 이름을 추가합니다. -->
+    <div>
+        {{chart | safe}}  <!-- Plotly 그래프를 HTML로 표시합니다. -->
+    </div>
+</body>
+</html>
