@@ -47,4 +47,4 @@ def stock_chart(ticker):
     return render_template('stock_chart.html', chart=chart_html, ticker=ticker)  # HTML을 웹 페이지에 전달합니다.
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
