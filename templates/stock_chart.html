@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ticker}} Stock Chart</title>  <!-- 웹 페이지 제목에 종목 이름을 추가합니다. -->
+    <title>{{ticker}} Stock Chart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>{{ticker}} Stock Chart</h1>  <!-- 제목에 종목 이름을 추가합니다. -->
-    <div>
-        {{chart | safe}}  <!-- Plotly 그래프를 HTML로 표시합니다. -->
+    <div class="container">
+        <h1 class="text-center my-4">{{ticker}} Stock Chart</h1>
+        <form method="POST" action="/chart/{{ticker}}" class="mb-4">
+            <div class="form-row">
+                <div class="col">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" id="start_date" name="start_date" value="{{start_date}}" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="end_date">End Date:</label>
+                    <input type="date" id="end_date" name="end_date" value="{{end_date}}" class="form-control">
+                </div>
+                <div class="col align-self-end">
+                    <input type="submit" value="Update Chart" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+        <div>
+            {{chart | safe}}
+        </div>
+        <a href="/" class="btn btn-secondary mt-4">Go Back to Dashboard</a>  <!-- 대시보드로 돌아가는 버튼을 추가합니다. -->
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
