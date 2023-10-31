@@ -29,7 +29,7 @@ def plot_stock_chart(data):
 @app.route('/')
 def dashboard():
     tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN']  # 대시보드에 표시할 종목 리스트입니다.
-    return render_template('stock_dashboard6.html', tickers=tickers)  # 종목 리스트를 HTML에 전달합니다.
+    return render_template('stock_dashboard.html', tickers=tickers)  # 종목 리스트를 HTML에 전달합니다.
 
 
 
@@ -48,7 +48,7 @@ def stock_chart(ticker):
 
     chart_html = pio.to_html(chart, full_html=False)
 
-    return render_template('stock_chart6.html', chart=chart_html, ticker=ticker, start_date=start_date, end_date=end_date)  # 시작 및 종료 날짜도 템플릿에 전달합니다.
+    return render_template('stock_chart.html', chart=chart_html, ticker=ticker, start_date=start_date, end_date=end_date)  # 시작 및 종료 날짜도 템플릿에 전달합니다.
 
 
 if __name__ == '__main__':
