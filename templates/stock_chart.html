@@ -10,12 +10,16 @@
         <form method="POST" action="/chart/{{ticker}}" class="mb-4">
             <div class="form-row">
                 <div class="col">
-                    <label for="start_date">Start Date:</label>
-                    <input type="date" id="start_date" name="start_date" value="{{start_date}}" class="form-control">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" value="{{date}}" class="form-control">
                 </div>
                 <div class="col">
-                    <label for="end_date">End Date:</label>
-                    <input type="date" id="end_date" name="end_date" value="{{end_date}}" class="form-control">
+                    <label for="interval">Choose interval:</label>
+                    <select id="interval" name="interval" class="form-control">
+                        <option value="5m">5 minutes</option>
+                        <option value="30m">30 minutes</option>
+                        <option value="1h">1 hour</option>
+                    </select>
                 </div>
                 <div class="col align-self-end">
                     <input type="submit" value="Update Chart" class="btn btn-primary">
